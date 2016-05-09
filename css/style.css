@@ -19,10 +19,14 @@ h4 {
     font-family: 'Raleway';
 }
 
+h5 {
+    font-family: 'Raleway';
+}
+
 .button .name {
     font-family: 'Raleway';
 }
 
-.top-bar-section {
-    font-family: 'Raleway';
+.top-bar ul li a {
+    font-family: 'Raleway' !imporant;
 }
