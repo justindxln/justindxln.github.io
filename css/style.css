@@ -107,3 +107,7 @@ h5 {
 .overlay-fade-in .button {
     opacity: 1;
 }
+
+.top-banner {
+ background-color: #333333;   
+}
