@@ -1,16 +1,16 @@
 ** 0.1.2 [26/11/2016]
-* Ironed out most of the collision detection bugs
+* Ironed out most of the collision detection bugs (please let me know if you still encounter any)
 * Jumping is less floaty
-* Player is given more mid-air control
+* Player is given more mid-air control (mid-air horizontal momentum is still preserved if no input) 
 * Implemented Jump Abort (release Jump while going up to stop ascending)
 * Implemented Double Jump (press Jump again in mid-air for another jump, can only be performed once every jump)
 * Implemented Dash and Air Dash (Down + hold Jump to dash forward, Air Dash is counted as a Double Jump)
-* Removed Ramps from level
+* Removed ramps from level
 * Slightly modified and expanded level
 
 ** 0.1.1 [24/11/2016]
 * Implemented basic collision detection
-* Jump and gravity works properly
+* Jumping and gravity works properly
 * Made a basic sandbox level
 
 ** 0.1.0 [23/11/2016]
