@@ -1,0 +1,15 @@
+[Up] = W
+[Down] = S
+[Left] = A
+[Right] = D
+
+[Attack] = U (not implemented)
+[Jump] = I or Space
+[Special] = O (not implemented)
+
+----
+
+* Press [Jump] again in mid-air to double jump
+* Release [Jump] while jumping up to abort jump
+* Hold [Down] + Press and hold [Jump] to dash and air-dash
+* Release [Jump] mid-dash to cancel dash
