@@ -3,7 +3,7 @@
 [Left] = A
 [Right] = D
 
-[Attack] = U (not implemented)
+[Attack] = U
 [Jump] = I or Space
 [Special] = O (not implemented)
 

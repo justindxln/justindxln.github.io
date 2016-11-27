@@ -1,3 +1,9 @@
+** 0.2.0 [27/11/2016]
+* Implemented attacks (3-hit ground attack combo, 1 mid-air attack)
+* Further tweaking of physics and air movement
+* Changed the level a little bit
+* It is now harder to PRAISE THE SUN
+
 ** 0.1.2 [26/11/2016]
 * Ironed out most of the collision detection bugs (please let me know if you still encounter any)
 * Jumping is less floaty
