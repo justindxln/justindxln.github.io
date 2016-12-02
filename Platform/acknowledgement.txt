@@ -1,0 +1,9 @@
+** Tools used:
+* Unity Personal Edition 5.4.3
+* Aseprite 1.1.9
+* Alferd Spritesheet Unpacker
+
+** Assets used:
+* Player Character sprite: Megaman Zero series
+* VFX: Melty Blood Actress Again
+* Level: 2D Toolkit standard assets

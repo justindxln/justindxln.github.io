@@ -4,12 +4,18 @@
 [Right] = D
 
 [Attack] = U
-[Jump] = I or Space
+[Jump] = I
 [Special] = O (not implemented)
 
 ----
 
-* Press [Jump] again in mid-air to double jump
-* Release [Jump] while jumping up to abort jump
-* Hold [Down] + Press and hold [Jump] to dash and air-dash
-* Release [Jump] mid-dash to cancel dash
+Press [Jump] again in mid-air to double jump
+Release [Jump] while jumping up to abort jump
+Hold [Down] + Press and hold [Jump] to dash and air-dash
+Release [Jump] mid-dash to cancel dash
+
+----
+
+Combo:
+attack -> attack -> attack
+attack -> attack -> delay -> attack
