@@ -1,0 +1,12 @@
+** Tools used:
+* Unity Personal Edition 5.4.3
+* Aseprite 1.1.9
+* Alferd Spritesheet Unpacker
+* Unity 2DToolKit
+
+** Assets used:
+* Player Character sprites: Megaman Zero series
+* Bonewalker Enemy sprites: Fire Emblem The Sacred Stones
+* Mogall Enemy sprites: Fire Emblem The Sacred Stones
+* VFX: Melty Blood Actress Again
+* Level: 2D Toolkit standard assets
