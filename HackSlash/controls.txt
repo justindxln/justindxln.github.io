@@ -9,10 +9,10 @@
 
 ----
 
-Press [Jump] again in mid-air to double jump
-Release [Jump] while jumping up to abort jump
-Hold [Down] + Press and hold [Jump] to dash and air-dash
-Release [Jump] mid-dash to cancel dash
+[Jump] in the air = double jump
+[Down] + hold [Jump] = dash
+[Down] + [Jump] in the air = air dash
+[Up] + [Jump] = back dash
 
 ----
 

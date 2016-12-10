@@ -1,3 +1,10 @@
+** 0.3.0b [10/12/2016]
+* Fixed bug where Bonewalker phases through wall during attack
+* Adjusted HUD colours
+* Tweaked Stamina regen, regen is now slower if player drains the entire Stamina bar
+* Rebalanced all stamina drain values
+* Added Back Dash (hold Up + Jump to activate)
+
 ** 0.3.0 [9/12/2016]
 * Added tweakable air control modes (classic, semi-realistic, realistic)
 * Implemented HP and Stamina
