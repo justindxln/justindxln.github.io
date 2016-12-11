@@ -1,3 +1,11 @@
+** 0.3.1 [11/12/2016]
+* Rebalanced stamina drain values
+* Stamina will now regenerate after a small delay
+* Added a dash attack (press attack during Back Dash to use)
+* Increased damage for 2nd normal attack (1 to 2)
+* Retweaked Bone Walker AI
+* Overhauled the level
+
 ** 0.3.0b [10/12/2016]
 * Fixed bug where Bonewalker phases through wall during attack
 * Adjusted HUD colours
@@ -18,7 +26,7 @@
 * Implemented slash VFX for each attack
 * Implemented Enemy parent class
 * Implemented Bonewalker enemy with basic AI
-* Expanded the map
+* Expanded the level
 
 ** 0.2.1 [3/12/2016]
 * Tweaked Dash and Air Dash (Dash is slower but further, Air Dash is quicker but shorter)
