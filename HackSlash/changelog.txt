@@ -1,3 +1,9 @@
+** 0.3.1b [12/12/2016]
+* Fixed dashattack not spawning FX and not consuming stamina
+* Fixed coroutines not being stopped properly upon cancelling actions, taking damage, etc
+* Taking damage will now delay stamina regeneration
+* Added Archer sprites, to be implemented next update
+
 ** 0.3.1 [11/12/2016]
 * Rebalanced stamina drain values
 * Stamina will now regenerate after a small delay
