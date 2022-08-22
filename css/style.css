@@ -4,6 +4,9 @@ body {
 
 h1 {
     font-family: 'Raleway';
+    font-family: monospace;
+    font-size: 5em;
+    color: #008CBA;
 }
 
 h2 {
@@ -110,5 +113,13 @@ h5 {
 
 .top-banner {
  background-color: #333333;   
+}
+
+.center-cropped {
+  width: 500px;
+  height: 280px;
+  object-fit: none;
+  object-position: center;
+  overflow: hidden;
 }
 
