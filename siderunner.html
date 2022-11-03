@@ -71,19 +71,49 @@
     <br>
     <div class="row">
         <div class="large-12 columns">
-            <h3>Endless Runner Implementation Details (In-Progress)</h3>
+            <h3>Endless Runner Implementation Details (Work-In-Progress)</h3>
             
             <h4>Gameplay Systems</h4>
+            
+            <h5>Game Mode</h5>
+            <p>This class controls gameplay flow, spawns the appropriate actors in the scene, and all scoring related functions.</p>
+            
+            <h5>Runner Character</h5>
+            <p>This class controls all movement mechanics and camera control functions.</p>
+            
+            
             <h5>Player Status Manager</h5>
-            <p>This class manages all non-movement features related to the Player Character, including HitPoint management, buffs, and status effects </p>
+            <p>This class manages all Health, Damage, and Status Effects features related to the Player Character.</p>
+            
+            <h5>Level Generator</h5>
+            <p>This class stores the level database and handles level generation as well as deletion during gameplay.</p>
 
             <h4>HUD</h4>
-            
+            <img src="img/EndlessRunnerStatusHUD.gif">
+            <img src="img/EndlessRunnerMultiplierHUD.gif">
+            <br>
+            <br>
             <h5>Player Status HUD</h5>
-            <p>This HUD section shows the player Health, Shield, and Double Jump status. The Health bar color is dynamic and depends on the player's curren health percentage. The Shield bar envelops the health bar instead of being a separate bar, making it more intuitive for displaying the shield amount. The Double Jump indicator is a mini progress bar to show the cooldown progress, with an outer glow to clearly indicate whether Double Jump is ready.</p>
+            <img src="img/EndlessRunnerHUD.png">
+            <br>
+            <br>
+            <p>
+                This HUD section has three main components: Health Bar, Double Jump Indicator, and Status Icons Tray.<br>
+                - The Health Bar color is dynamic, and is calculated using player's current health percentage as an Alpha value to interpolate between two color values <a href="img/SetHPBarTrailValue_BP.png" target="_blank">(Blueprint Implementation)</a>. A translucent blue overlay covers the Health Bar when the Shield Status is active<br>
+                - The Health gain/loss is animated using two overlapping Progress Bar Widgets. When Health is added or subtracted, one Progress Bar value will be set immediately to the target value while the other will trail behind at a fixed rate <a href="img/SetHPBarTrailValue_BP.png" target="_blank">(Blueprint Implementation).</a><br>
+                - The Double Jump indicator is a mini progress bar to show the double jump cooldown progress, with an outer glow to clearly indicate whether Double Jump is ready.<br>
+                - The Status Icons Tray is a Horizontal Box Widget that displays all active Status Icon Widgets. Each time a Status Effect is activated/deactivated, Player Status Manager calls the HUD Widget function to toggle the corresponding Status Icon. The HUD Widget then creates or remove the Status Icon while checking for duplicates <a href="img/ToggleStatusIcon_BP.png" target="_blank">(Blueprint Implementation)</a>. <br> 
+                - Status Icon functionalities are decentralised, and each Status Icon class manages its own text or progress bar by getting the relevant value from the manager classes.<br>
+            </p>
+            
             
             <h5>Score HUD</h5>
-            <p>The Score HUD displays the score multiplier and the current accummulated score. The multiplier has dynamic color and animation speed depending on how close the player is to the moving wall. The multiplier text also has a small "pop" animation whenever it changes value </p>
+            <img src="img/EndlessRunnerScoreHUD.png">
+            <p>
+                The Score HUD displays the Current Score Multiplier and the Current Accummulated Score.<br>
+                - The Multiplier has dynamic color and animation speed, similarly implemented using the distance from the player is to the moving wall as an Alpha value to interpolate between values <a href="img/MultiplierSpeedColor_Mix.png" target="_blank">(Mixed Implementation)</a>.<br>
+                - The Multiplier text also has a small "pop" animation whenever it changes value. This is done by comparing the Text output from one frame to the next while getting the Score Multiplier value from Game Mode <a href="img/GetScoreMultiplierText_BP.png" target="_blank">(Blueprint Implementation)</a>.
+            </p>
             
         </div>
     </div>
