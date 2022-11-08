@@ -78,23 +78,23 @@
             <h5>Game Mode</h5>
             <p>
                 This class is at the center of the game, being responsible for controlling gameplay flow, spawning Actors and UMG Widgets, saving/loading settings, and all scoring related functions.<br>
-                - When the player starts a new game, Game Mode sets up the Player Character and all relevant Manager instances, as well as UI elements <a href="img/GameModeSetup_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
-                - Game Mode loads user settings and high scores on BeginPlay(), and saves them when the player returns from the settings menu or when a game ends <a href="img/SaveLoad_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
-                - Scoring is done by Game Mode as the player survives in the level, and the score increase rate is multiplied based on how close the Player Character stays to the dangerous Kill Wall <a href="img/Scoring_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
+                -- When the player starts a new game, Game Mode sets up the Player Character and all relevant Manager instances, as well as UI elements <a href="img/GameModeSetup_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
+                -- Game Mode loads user settings and high scores on BeginPlay(), and saves them when the player returns from the settings menu or when a game ends <a href="img/SaveLoad_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
+                -- Scoring is done by Game Mode as the player survives in the level, and the score increase rate is multiplied based on how close the Player Character stays to the dangerous Kill Wall <a href="img/Scoring_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
             </p>
             
             <h5>Runner Character</h5>
             <p>
                 This class controls all Player Character movement mechanics and camera control functions.<br>
-                - Runner Character movement properties are adjustable by the player in the Settings Menu, and are applied to Runner Character by Game Mode when a new game begins <a href="img/SetupMovement_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
-                - Double Jump needs to be recharged every time it is used, upon which a cooldown is triggered <a href="img/DoubleJumpCD_CPPpng.png" target="_blank">(C++ Implementation)</a>. This system can also be extended to include triple/quadruple/etc jumps.<br>
-                - The camera has dynamic positioning, and shows more in the direction that the player is heading in. Camera movement from one position to another is smoothed out to make sure transitions are not jarring <a href="img/CameraOffset_CPPpng.png" target="_blank">(C++ Implementation)</a>.
+                -- Runner Character movement properties are adjustable by the player in the Settings Menu, and are applied to Runner Character by Game Mode when a new game begins <a href="img/SetupMovement_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
+                -- Double Jump needs to be recharged every time it is used, upon which a cooldown is triggered <a href="img/DoubleJumpCD_CPPpng.png" target="_blank">(C++ Implementation)</a>. This system can also be extended to include triple/quadruple/etc jumps.<br>
+                -- The camera has dynamic positioning, and shows more in the direction that the player is heading in. Camera movement from one position to another is smoothed out to make sure transitions are not jarring <a href="img/CameraOffset_CPPpng.png" target="_blank">(C++ Implementation)</a>.
             </p>
             
             <h5>Player Status Manager (In-Progress)</h5>
             <p>
                 This class manages all Health, Damage, and Status Effects features related to the Player Character.<br>
-                - When an Actor that can do damage collides with Runner Character, they call Player Status Manager to send over the damage value and damage type. Instant damage types will be applied to Health immediately, but Damage-Over-Time types will be added to a variable that is used to apply damage every tick.
+                -- When an Actor that can do damage collides with Runner Character, they call Player Status Manager to send over the damage value and damage type. Instant damage types will be applied to Health immediately, but Damage-Over-Time types will be added to a variable that is used to apply damage every tick.
             </p>
             
             <h5>Level Generator (In-Progress)</h5>
