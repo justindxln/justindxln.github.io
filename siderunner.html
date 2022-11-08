@@ -75,42 +75,47 @@
             
             <h4>Gameplay Systems</h4>
             
-            <h5>Game Mode</h5>
+            <h5><b>Game Mode</b></h5>
             <p>
-                This class is at the center of the game, being responsible for controlling gameplay flow, spawning Actors and UMG Widgets, saving/loading settings, and all scoring related functions.<br>
+                This class is at the center of the game, being responsible for controlling <b>gameplay flow</b>, spawning <b>Actors and UMG Widgets</b>, <b>saving/loading</b> settings, and all <b>scoring</b> related functions.<br>
                 -- When the player starts a new game, Game Mode sets up the Player Character and all relevant Manager instances, as well as UI elements <a href="img/GameModeSetup_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
                 -- Game Mode loads user settings and high scores on BeginPlay(), and saves them when the player returns from the settings menu or when a game ends <a href="img/SaveLoad_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
                 -- Scoring is done by Game Mode as the player survives in the level, and the score increase rate is multiplied based on how close the Player Character stays to the dangerous Kill Wall <a href="img/Scoring_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
             </p>
             
-            <h5>Runner Character</h5>
+            <h5><b>Runner Character</b></h5>
             <p>
-                This class controls all Player Character movement mechanics and camera control functions.<br>
+                This class controls all Player Character <b>movement mechanics</b> and <b>camera control</b> functions.<br>
                 -- Runner Character movement properties are adjustable by the player in the Settings Menu, and are applied to Runner Character by Game Mode when a new game begins <a href="img/SetupMovement_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
                 -- Double Jump needs to be recharged every time it is used, upon which a cooldown is triggered <a href="img/DoubleJumpCD_CPPpng.png" target="_blank">(C++ Implementation)</a>. This system can also be extended to include triple/quadruple/etc jumps.<br>
                 -- The camera has dynamic positioning, and shows more in the direction that the player is heading in. Camera movement from one position to another is smoothed out to make sure transitions are not jarring <a href="img/CameraOffset_CPPpng.png" target="_blank">(C++ Implementation)</a>.
             </p>
             
-            <h5>Player Status Manager (In-Progress)</h5>
+            <h5><b>Player Status Manager</b></h5>
             <p>
-                This class manages all Health, Damage, and Status Effects features related to the Player Character.<br>
-                -- When an Actor that can do damage collides with Runner Character, they call Player Status Manager to send over the damage value and damage type. Instant damage types will be applied to Health immediately, but Damage-Over-Time types will be added to a variable that is used to apply damage every tick.
+                This class manages all <b>Health</b>, <b>Damage</b>, and <b>Status Effects</b> features related to the Player Character.<br>
+                -- When an Actor that can do damage collides with Runner Character, they call Player Status Manager to send over the damage value and damage type. Instant damage types will be applied to Health immediately, but Damage-Over-Time types will be added to a variable that is used to apply damage every tick <a href="img/ProcessDamage_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
+                -- When a PowerUp Actor collides with Runner Character, they call Player Status Manager to trigger the PowerUp effect, sending over the PowerUp Type, and Effect Value if relevant. Player Status Manager then processes and applies the effects internally <a href="img/ProcessPowerUp_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
+                -- Almost every change happening with Player Status is reflected on the Player Status HUD. Each time the Player Character loses or gains health, or triggers a PowerUp, a Blueprint Implementable Event on Player Status Manager is triggered and calls the appropriate functions on the HUD Widget Blueprint to update the HUD or play the corresponding Timeline Animation <a href="img/PlayerStatusManagerHUD_Mix.png" target="_blank">(Mixed Implementation)</a>.<br>
             </p>
             
-            <h5>Level Generator (In-Progress)</h5>
-            <p>This class stores the level database and handles level generation as well as deletion during gameplay.</p>
+            <h5><b>Level Generator</b></h5>
+            <p>
+                This class stores the <b>level database</b> and handles <b>level generation</b> as well as deletion during gameplay.<br>
+                -- Every time the player reaches the end of a Level block, the Level calls the Level Generator via a delegate function to spawn another Level. Level Generator selects a random Level from the Level Database Array to spawn, then places it at where the last Level ends. Level Generator then attaches to the appropriate delegates two functions to spawn another level when the player touches a trigger, and to delete the oldest level when the Kill Wall touches that trigger <a href="img/LevelGeneration_CPP.png" target="_blank">(C++ Implementation)</a>.<br>
+            </p>
 
             <h4>HUD</h4>
             <img src="img/EndlessRunnerStatusHUD.gif">
             <img src="img/EndlessRunnerMultiplierHUD.gif">
             <br>
             <br>
-            <h5>Player Status HUD</h5>
+            <h5><b>Player Status HUD</b></h5>
             <img src="img/EndlessRunnerHUD.png">
             <br>
             <br>
             <p>
-                This HUD section has three main components: Health Bar, Double Jump Indicator, and Status Icons Tray.<br>
+                This HUD section has three main components: <b>Health Bar</b>, <b>Double Jump Indicator</b>, and <b>Status Icons Tray</b>.<br>
                 - The Health Bar color is dynamic, and is calculated using player's current health percentage as an Alpha value to interpolate between two color values <a href="img/SetHPBarTrailValue_BP.png" target="_blank">(Blueprint Implementation)</a>. A translucent blue overlay covers the Health Bar when the Shield Status is active<br>
                 - The Health gain/loss is animated using two overlapping Progress Bar Widgets. When Health is added or subtracted, one Progress Bar value will be set immediately to the target value while the other will trail behind at a fixed rate <a href="img/SetHPBarTrailValue_BP.png" target="_blank">(Blueprint Implementation).</a><br>
                 - The Double Jump indicator is a mini progress bar to show the double jump cooldown progress, with an outer glow to clearly indicate whether Double Jump is ready.<br>
@@ -119,10 +124,10 @@
             </p>
             
             
-            <h5>Score HUD</h5>
+            <h5><b>Score HUD</b></h5>
             <img src="img/EndlessRunnerScoreHUD.png">
             <p>
-                The Score HUD displays the Current Score Multiplier and the Current Accummulated Score.<br>
+                The Score HUD displays the <b>Current Score Multiplier</b> and the <b>Current Accummulated Score</b>.<br>
                 - The Multiplier has dynamic color and animation speed, similarly implemented using the distance from the player is to the moving wall as an Alpha value to interpolate between values <a href="img/MultiplierSpeedColor_Mix.png" target="_blank">(Mixed Implementation)</a>.<br>
                 - The Multiplier text also has a small "pop" animation whenever it changes value. This is done by comparing the Text output from one frame to the next while getting the Score Multiplier value from Game Mode <a href="img/GetScoreMultiplierText_BP.png" target="_blank">(Blueprint Implementation)</a>.
             </p>
